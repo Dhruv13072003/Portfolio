@@ -8,7 +8,8 @@
 body {
   background: black;
   color: white;
-  font-family: "Matter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "rajdhani", Arial, sans-serif;
+  /* font-family: "Matter", "Helvetica Neue", Helvetica, Arial, sans-serif; */
 }
 
 .hero-text {
@@ -16,7 +17,7 @@ body {
 }
 
 .about-us-text {
-  font-size: 12vw;
+  font-size: 40px;
 }
 
 .skills-text {

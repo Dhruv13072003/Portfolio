@@ -5,9 +5,9 @@ import Link from "next/link";
 
 const Contact = () => {
   return (
-    <section className="p-4 sm:p-8 md:p-12 lg:p-20 h-screen">
+    <section className="p-4 sm:p-8 md:p-12 lg:p-20 aspect-[4/5] md:aspect-auto md:h-screen">
       <div
-        className="rounded-[110px] w-full h-full overflow-hidden relative flex items-center justify-center"
+        className="rounded-[5vw] lg:rounded-[110px] w-full h-full overflow-hidden relative flex items-center justify-center"
         id="contact"
       >
         <div className="absolute top-0 left-0 w-full h-full">

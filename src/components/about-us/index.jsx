@@ -59,7 +59,7 @@ const AboutUs = () => {
         <div className="col-span-3">
           <p
             ref={paragraphRef}
-            className="about-us-text leading-relaxed text-gray-300 reveal text-lg"
+            className="about-us-text leading-relaxed text-gray-300 reveal text-lg font-medium"
           >
             Creative and detail-oriented Frontend Developer with hands-on
             experience building responsive and performance-optimized web

@@ -17,6 +17,10 @@ import image13 from "@/assets/skills/13.png";
 import image14 from "@/assets/skills/14.png";
 import image15 from "@/assets/skills/15.png";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 const images = [
   image1,
   image2,
@@ -90,6 +94,44 @@ const Skills = () => {
   };
 
   useEffect(() => {
+    if (textRef.current) {
+      gsap.fromTo(
+        textRef.current,
+        { opacity: 0, y: 100, scale: 0.8 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: textRef.current,
+            start: "top 80%", // when top of text is 80% down viewport
+            end: "bottom 20%",
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+    }
+
+    gsap.fromTo(
+      ".skills-small-text",
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: textRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play reverse play reverse",
+        },
+      }
+    );
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -165,7 +207,19 @@ const Skills = () => {
                 images.map((img) => createCircularTexture(img.src))
               );
 
-              const radius = Math.max(45, Math.min(90, width / 15));
+              // const radius = Math.max(45, Math.min(90, width / 15));
+
+              let radius;
+              if (width < 500) {
+                radius = width / 10; // Small devices
+              } else if (width < 768) {
+                radius = width / 12; // Medium devices
+              } else {
+                // radius = width / 15; // Large devices
+                radius = Math.max(45, Math.min(90, width / 15));
+              }
+              radius = Math.max(30, Math.min(80, radius)); // Clamp radius
+
               const padding = radius * 0.5;
               const xSpacing = radius * 2.2;
               const yRange = height - padding * 2;
@@ -210,7 +264,6 @@ const Skills = () => {
             Matter.World.add(world, mouseConstraint);
             render.mouse = mouse;
 
-            // Prevent scrolling only when interacting with balls
             const handleMouseDown = (e) => {
               const mousePoint = mouse.position;
               const bodies = Matter.Composite.allBodies(world);
@@ -235,15 +288,6 @@ const Skills = () => {
               passive: false,
             });
 
-            // Cleanup when component unmounts or observer is removed
-            // (We'll also return a cleanup from the main useEffect)
-            // But since this is inside the observer, you may want to prevent double setup
-            // So we'll use a flag or move cleanup to the main useEffect
-
-            // IMPORTANT: To avoid double setup, you may want to use a flag
-            // but for simplicity, I'll show the cleanup in the main useEffect
-
-            // Alternatively, unobserve after first trigger
             observer.unobserve(entry.target);
           }
         });
@@ -255,27 +299,17 @@ const Skills = () => {
       observer.observe(textRef.current);
     }
 
-    // Cleanup for the entire effect
     return () => {
       if (textRef.current) {
         observer.unobserve(textRef.current);
       }
-      // Optionally, you can also clean up Matter.js here if you want
-      // But if you want to keep the balls, skip this part
-      // const engine = engineRef.current;
-      // const world = engine.world;
-      // Matter.World.clear(world);
-      // Matter.Engine.clear(engine);
-      // if (render && render.canvas && render.canvas.parentNode) {
-      //   render.canvas.remove();
-      // }
     };
   }, []);
 
   return (
-    <section className="flex aspect-[4/5] flex-col bg-black p-8 font-primary text-white md:aspect-auto md:h-screen md:p-12">
+    <section className="flex aspect-[4/5] flex-col bg-black p-4 sm:p-8 font-primary text-white md:aspect-auto md:h-screen md:p-12">
       <div
-        className="h-full rounded-4xl lg:rounded-[110px] border border-white/20 relative isolate overflow-hidden"
+        className="h-full rounded-[5vw] lg:rounded-[110px] border border-white/20 relative isolate overflow-hidden"
         id="skills"
       >
         <div

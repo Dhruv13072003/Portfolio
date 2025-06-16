@@ -102,7 +102,7 @@ const portfolioItems = [
   },
 ];
 
-const PortfolioShowcase = () => {
+const Projects = () => {
   const mainRef = useRef(null);
   const h2Ref = useRef(null);
   const sectionRef = useRef(null);
@@ -156,18 +156,18 @@ const PortfolioShowcase = () => {
   return (
     <section ref={mainRef} id="projects">
       <h2
-        className="text-center text-4xl font-bold pt-20 pb-4 sm:pb-8 md:pb-16 lg:pb-20 projects-text lg:min-h-[40vh] flex items-center justify-center"
+        className="text-center text-4xl font-bold pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-4 sm:pb-8 md:pb-16 lg:pb-20 projects-text lg:min-h-[40vh] flex items-center justify-center"
         ref={h2Ref}
       >
         WORK
       </h2>
       <div
         ref={sectionRef}
-        className="relative h-screen overflow-hidden bg-black text-white flex flex-col scale-50"
+        className="relative aspect-[4/5] md:aspect-auto md:h-screen overflow-hidden bg-black text-white flex flex-col"
       >
         <div
           ref={containerRef}
-          className="flex h-full gap-10 p-20 w-fit relative"
+          className="flex h-full gap-10 p-8 sm:p-12 md:p-16 lg:p-20 w-fit relative"
         >
           {portfolioItems.map((item, index) => (
             <div
@@ -181,6 +181,7 @@ const PortfolioShowcase = () => {
                 width={688}
                 height={796}
                 quality={100}
+                sizes="(max-width: 640px) 280px, 688px"
               />
 
               <div className="absolute inset-0 z-10">
@@ -198,4 +199,4 @@ const PortfolioShowcase = () => {
   );
 };
 
-export default PortfolioShowcase;
+export default Projects;

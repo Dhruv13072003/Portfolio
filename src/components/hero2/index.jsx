@@ -102,7 +102,7 @@ const Hero2 = () => {
           maskRepeat: "no-repeat",
         }}
       >
-        <div className="flex items-end hero-text h-full">
+        <div className="flex items-end hero-text h-full font-semibold">
           <div>
             A developer <br />
             <div className="flex">
@@ -116,7 +116,7 @@ const Hero2 = () => {
         </div>
       </div>
       <div className="absolute md:opacity-5 inset-0 z-10 p-10 pointer-events-none space-y-6">
-        <div className="flex items-end hero-text h-full">
+        <div className="flex items-end hero-text h-full font-semibold">
           <div>
             A developer <br />
             <div className="flex">
