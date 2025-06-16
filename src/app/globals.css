@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-orbitron: var(--font-orbitron);
+  --font-rajdhani: var(--font-rajdhani);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: black;
+  color: white;
+  font-family: "Matter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.hero-text {
+  font-size: 15vw;
+}
+
+.about-us-text {
+  font-size: 12vw;
+}
+
+.skills-text {
+  font-size: 12vw;
+}
+
+.skills-small-text {
+  font-size: 2vw;
+}
+
+.projects-text {
+  font-size: 12vw;
+}
+
+.hover-text {
+  font-size: 4vw;
+}
+
+.a-text {
+  font-size: 3vw;
+}
+
+.contact-title-text {
+  font-size: 6vw;
+}
+
+.hero-text,
+.about-us-text,
+.skills-text,
+.projects-text,
+.hover-text,
+.a-text,
+.contact-title-text {
+  line-height: 1.1;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-text {
+    font-size: 12vw;
+  }
+  .about-us-text {
+    font-size: 4vw;
+  }
+  .skills-text {
+    font-size: 13vw;
+  }
+  .skills-small-text {
+    font-size: 1vw;
+  }
 }
