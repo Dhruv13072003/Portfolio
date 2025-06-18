@@ -4,39 +4,24 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+
 import fantasyBrawlNBA from "@/assets/projects/fantasy-brawl/nba.png";
 import clupChatMain from "@/assets/projects/clup-chat/main.png";
 import motari from "@/assets/projects/mi-ride/main.png";
 
 import fantasyBrawl1 from "@/assets/projects/fantasy-brawl/1.png";
 import fantasyBrawl2 from "@/assets/projects/fantasy-brawl/2.png";
-import fantasyBrawl3 from "@/assets/projects/fantasy-brawl/3.png";
 import fantasyBrawl4 from "@/assets/projects/fantasy-brawl/4.png";
-import fantasyBrawl5 from "@/assets/projects/fantasy-brawl/5.png";
 import fantasyBrawl6 from "@/assets/projects/fantasy-brawl/6.png";
-import fantasyBrawl7 from "@/assets/projects/fantasy-brawl/7.png";
 import fantasyBrawl8 from "@/assets/projects/fantasy-brawl/8.png";
 import fantasyBrawl9 from "@/assets/projects/fantasy-brawl/9.png";
-import fantasyBrawl10 from "@/assets/projects/fantasy-brawl/10.png";
-import fantasyBrawl11 from "@/assets/projects/fantasy-brawl/11.png";
 import fantasyBrawl12 from "@/assets/projects/fantasy-brawl/12.png";
-import fantasyBrawl13 from "@/assets/projects/fantasy-brawl/13.png";
 import fantasyBrawl14 from "@/assets/projects/fantasy-brawl/14.png";
 import fantasyBrawl15 from "@/assets/projects/fantasy-brawl/15.png";
-import fantasyBrawl16 from "@/assets/projects/fantasy-brawl/16.png";
 import fantasyBrawl17 from "@/assets/projects/fantasy-brawl/17.png";
-import fantasyBrawl18 from "@/assets/projects/fantasy-brawl/18.png";
 import fantasyBrawl19 from "@/assets/projects/fantasy-brawl/19.png";
-import fantasyBrawl20 from "@/assets/projects/fantasy-brawl/20.png";
 import fantasyBrawl21 from "@/assets/projects/fantasy-brawl/21.png";
-import fantasyBrawl22 from "@/assets/projects/fantasy-brawl/22.png";
-import fantasyBrawl23 from "@/assets/projects/fantasy-brawl/23.png";
 import fantasyBrawl24 from "@/assets/projects/fantasy-brawl/24.png";
-import fantasyBrawl25 from "@/assets/projects/fantasy-brawl/25.png";
-import fantasyBrawl26 from "@/assets/projects/fantasy-brawl/26.png";
-import fantasyBrawl27 from "@/assets/projects/fantasy-brawl/27.png";
-import fantasyBrawl28 from "@/assets/projects/fantasy-brawl/28.png";
-import fantasyBrawl29 from "@/assets/projects/fantasy-brawl/29.png";
 
 import clupChat1 from "@/assets/projects/clup-chat/1.png";
 import clupChat2 from "@/assets/projects/clup-chat/2.png";
@@ -59,33 +44,17 @@ const portfolioItems = [
     trailingImages: [
       fantasyBrawl1,
       fantasyBrawl2,
-      fantasyBrawl3,
       fantasyBrawl4,
-      fantasyBrawl5,
       fantasyBrawl6,
-      fantasyBrawl7,
       fantasyBrawl8,
       fantasyBrawl9,
-      fantasyBrawl10,
-      fantasyBrawl11,
       fantasyBrawl12,
-      fantasyBrawl13,
       fantasyBrawl14,
       fantasyBrawl15,
-      fantasyBrawl16,
       fantasyBrawl17,
-      fantasyBrawl18,
       fantasyBrawl19,
-      fantasyBrawl20,
       fantasyBrawl21,
-      fantasyBrawl22,
-      fantasyBrawl23,
       fantasyBrawl24,
-      fantasyBrawl25,
-      fantasyBrawl26,
-      fantasyBrawl27,
-      fantasyBrawl28,
-      fantasyBrawl29,
     ],
   },
   {
