@@ -1,19 +1,22 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
-export default function ConicLoader({
-  isLoading,
-  setIsLoading,
-  onComplete,
-  children,
-}) {
-  // const [isLoading, setIsLoading] = useState(true);
+export default function ConicLoader({ onComplete, children }) {
+  const [isLoading, setIsLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
 
   const loaderRef = useRef(null);
   const overlayRef = useRef(null);
   // const [percentage, setPercentage] = useState(0);
+
+  useLayoutEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isLoading]);
 
   useEffect(() => {
     const el = loaderRef.current;

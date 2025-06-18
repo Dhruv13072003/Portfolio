@@ -1,5 +1,6 @@
 import { Orbitron, Rajdhani } from "next/font/google";
 import "./globals.css";
+import "lenis/dist/lenis.css";
 
 const orbitron = Orbitron({
   variable: "--font-orbitron",
