@@ -100,7 +100,9 @@ const Projects = () => {
       }
     );
 
-    const scrollLength = container.scrollWidth - window.innerWidth;
+    // const scrollLength = container.scrollWidth - window.innerWidth;
+    const scrollLength =
+      container.getBoundingClientRect().width - window.innerWidth;
 
     const horizontalScroll = gsap.to(container, {
       x: -scrollLength,
@@ -123,7 +125,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <section ref={mainRef} id="projects">
+    <section ref={mainRef} id="projects" className="overflow-x-hidden">
       <h2
         className="text-center text-4xl font-bold pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-4 sm:pb-8 md:pb-16 lg:pb-20 projects-text lg:min-h-[40vh] flex items-center justify-center"
         ref={h2Ref}
@@ -136,21 +138,22 @@ const Projects = () => {
       >
         <div
           ref={containerRef}
-          className="flex h-full gap-10 p-8 sm:p-12 md:p-16 lg:p-20 w-fit relative"
+          className="flex h-full gap-10 p-8 sm:p-12 md:p-16 lg:p-20 w-fit relative min-w-0 snap-x snap-mandatory overflow-x-hidden"
+          // style={{ width: `${portfolioItems.length * 100}vw` }}
         >
           {portfolioItems.map((item, index) => (
             <div
               key={index}
-              className="panel bg-zinc-800 rounded-2xl shadow-lg shrink-0 relative"
+              className="panel snap-start bg-zinc-800 rounded-2xl shadow-lg shrink-0 relative w-[280px] sm:w-[360px] md:w-[480px] lg:w-[600px] xl:w-[688px] h-full"
             >
               <Image
                 src={item.image}
                 alt={item.title}
-                className="w-auto h-full object-cover rounded-2xl"
+                className="w-full h-full object-cover rounded-2xl"
                 width={688}
                 height={796}
                 quality={100}
-                sizes="(max-width: 640px) 280px, 688px"
+                sizes="(max-width: 640px) 280px, (max-width: 768px) 360px, (max-width: 1024px) 480px, (max-width: 1280px) 600px, 688px"
               />
 
               <div className="absolute inset-0 z-10">
