@@ -2,9 +2,8 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
-export default function ConicLoader({ onComplete, children }) {
+export default function ConicLoader({ onComplete }) {
   const [isLoading, setIsLoading] = useState(true);
-  const [showContent, setShowContent] = useState(false);
 
   const loaderRef = useRef(null);
   const overlayRef = useRef(null);
@@ -21,9 +20,6 @@ export default function ConicLoader({ onComplete, children }) {
   useEffect(() => {
     const el = loaderRef.current;
     const overlay = overlayRef.current;
-
-    // Show content behind immediately
-    setShowContent(true);
 
     // Initial scale animation for loader
     gsap.fromTo(
@@ -71,9 +67,6 @@ export default function ConicLoader({ onComplete, children }) {
 
   return (
     <>
-      {/* Main content that will be revealed */}
-      {showContent && <div className="fixed inset-0 z-0">{children}</div>}
-
       {/* Loader overlay with circular reveal */}
       {isLoading && (
         <>
